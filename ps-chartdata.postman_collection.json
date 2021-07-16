@@ -1,23 +1,24 @@
 {
 	"info": {
-		"_postman_id": "2a1b52cd-ad9e-4a06-beb6-dd7aa369c439",
+		"_postman_id": "d4a5e114-abc0-410c-8326-7fe0c15100ee",
 		"name": "ps-chartdata",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "/config",
+			"name": "config",
 			"item": [
 				{
-					"name": "/",
+					"name": "config",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/config",
+							"raw": "localhost:3444/config",
 							"host": [
-								"{{base_url}}"
+								"localhost"
 							],
+							"port": "3444",
 							"path": [
 								"config"
 							]
@@ -28,20 +29,106 @@
 			]
 		},
 		{
-			"name": "/history",
+			"name": "/cryptos",
 			"item": [
 				{
-					"name": "/",
+					"name": "/cryptos/:address/bars",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/history",
+							"raw": "{{base_url}}/cryptos/:address/bars?to=1623110400&resolution=1D&from=1623110300&quote_currency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"history"
+								"cryptos",
+								":address",
+								"bars"
+							],
+							"query": [
+								{
+									"key": "to",
+									"value": "1623110400"
+								},
+								{
+									"key": "resolution",
+									"value": "1D"
+								},
+								{
+									"key": "from",
+									"value": "1623110300"
+								},
+								{
+									"key": "quote_currency",
+									"value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
+								}
+							],
+							"variable": [
+								{
+									"key": "address",
+									"value": "0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cryptos/:address/transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptos/:address/transactions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptos",
+								":address",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "address",
+									"value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cryptos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptos?search_query=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptos"
+							],
+							"query": [
+								{
+									"key": "search_query",
+									"value": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
+								},
+								{
+									"key": "search_query",
+									"value": "SAFEMOON",
+									"disabled": true
+								}
 							]
 						}
 					},
