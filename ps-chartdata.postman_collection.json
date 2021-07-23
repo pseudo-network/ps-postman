@@ -32,12 +32,81 @@
 			"name": "/cryptos",
 			"item": [
 				{
+					"name": "/cryptos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptos?search_query=0x5c96894168db59c9b1911826a3c2d198c724d0e3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptos"
+							],
+							"query": [
+								{
+									"key": "search_query",
+									"value": "0x8076C74C5e3F5852037F31Ff0093Eeb8c8ADd8D3",
+									"disabled": true
+								},
+								{
+									"key": "search_query",
+									"value": "0x5c96894168db59c9b1911826a3c2d198c724d0e3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/cryptos/:address/info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptos/:address/info?quote_currency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptos",
+								":address",
+								"info"
+							],
+							"query": [
+								{
+									"key": "quote_currency",
+									"value": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+								},
+								{
+									"key": "from",
+									"value": "1623110300",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": "1623110400",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "address",
+									"value": "0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "/cryptos/:address/bars",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/cryptos/:address/bars?to=1623110400&resolution=1D&from=1623110300&quote_currency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+							"raw": "{{base_url}}/cryptos/:address/bars?quote_currency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&from=1623110300&to=1623110400&resolution=1D",
 							"host": [
 								"{{base_url}}"
 							],
@@ -48,20 +117,20 @@
 							],
 							"query": [
 								{
-									"key": "to",
-									"value": "1623110400"
-								},
-								{
-									"key": "resolution",
-									"value": "1D"
+									"key": "quote_currency",
+									"value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
 								},
 								{
 									"key": "from",
 									"value": "1623110300"
 								},
 								{
-									"key": "quote_currency",
-									"value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
+									"key": "to",
+									"value": "1623110400"
+								},
+								{
+									"key": "resolution",
+									"value": "1D"
 								}
 							],
 							"variable": [
@@ -99,35 +168,7 @@
 							"variable": [
 								{
 									"key": "address",
-									"value": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/cryptos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/cryptos?search_query=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"cryptos"
-							],
-							"query": [
-								{
-									"key": "search_query",
-									"value": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
-								},
-								{
-									"key": "search_query",
-									"value": "SAFEMOON",
-									"disabled": true
+									"value": "0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
 								}
 							]
 						}
