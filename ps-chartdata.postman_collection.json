@@ -37,9 +37,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/cryptos?search_query=0x5c96894168db59c9b1911826a3c2d198c724d0e3",
+							"raw": "{{base_url_chartdata}}/cryptos?search_query=0x5c96894168db59c9b1911826a3c2d198c724d0e3",
 							"host": [
-								"{{base_url}}"
+								"{{base_url_chartdata}}"
 							],
 							"path": [
 								"cryptos"
@@ -65,9 +65,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/cryptos/:address/info?quote_currency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+							"raw": "{{base_url_chartdata}}/cryptos/:address/info?quote_currency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
 							"host": [
-								"{{base_url}}"
+								"{{base_url_chartdata}}"
 							],
 							"path": [
 								"cryptos",
@@ -106,9 +106,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/cryptos/:address/bars?quote_currency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&from=1623110300&to=1623110400&resolution=1D",
+							"raw": "{{base_url_chartdata}}/cryptos/:address/bars?quote_currency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&from=1628032022&to=1628051162&resolution=1D",
 							"host": [
-								"{{base_url}}"
+								"{{base_url_chartdata}}"
 							],
 							"path": [
 								"cryptos",
@@ -122,11 +122,11 @@
 								},
 								{
 									"key": "from",
-									"value": "1623110300"
+									"value": "1628032022"
 								},
 								{
 									"key": "to",
-									"value": "1623110400"
+									"value": "1628051162"
 								},
 								{
 									"key": "resolution",
@@ -136,7 +136,7 @@
 							"variable": [
 								{
 									"key": "address",
-									"value": "0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
+									"value": "0xccbcec79d632a682ec0295027d0f17833f9786ad"
 								}
 							]
 						}
@@ -149,9 +149,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/cryptos/:address/transactions",
+							"raw": "{{base_url_chartdata}}/cryptos/:address/transactions",
 							"host": [
-								"{{base_url}}"
+								"{{base_url_chartdata}}"
 							],
 							"path": [
 								"cryptos",
@@ -170,6 +170,37 @@
 									"key": "address",
 									"value": "0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ps-emailer",
+			"item": [
+				{
+					"name": "/messages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"name\": \"name\", \n    \"email\": \"team@pseudocoin.io\", \n    \"message\": \"message\", \n    \"type\":\"bug\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_emailer}}/messages",
+							"host": [
+								"{{base_url_emailer}}"
+							],
+							"path": [
+								"messages"
 							]
 						}
 					},
